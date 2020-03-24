@@ -1,9 +1,10 @@
 <?php
 
 namespace App\Http\Controllers\Admin;
-
 use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
+
+use App\Profile;
 
 class ProfileController extends Controller
 {
@@ -13,19 +14,27 @@ class ProfileController extends Controller
         return view('admin.profile.create');
     }
 
-    public function create()
+    public function create(Request $request)
     {
-        return redirect('admin/profile/create');
-    }
+    
+        
+       // 以下を追記
+      // Varidationを行う
+      $this->validate($request, Profile::$rules);
 
-    public function edit()
-    {
-        return view('admin.profile.edit');
-    }
+      $news = new Profile;
+      $form = $request->all();
 
-    public function update()
-    {
-        return redirect('admin/profile/edit');
-    }
+      // フォームから送信されてきた_tokenを削除する
+      unset($form['_token']);
+      // フォームから送信されてきたimageを削除する
+      unset($form['image']);
 
+      // データベースに保存する
+      $profile->fill($form);
+      $profile->save();
+
+      return redirect('admin/profile/create');
+  }
 }
+
