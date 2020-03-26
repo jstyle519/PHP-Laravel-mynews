@@ -1,21 +1,14 @@
 
-     {{-- layouts/profile.blade.phpを読み込む --}}
+<!--{{-- layouts/profile.blade.phpを読み込む --}}-->
 @extends('layouts.profile')
-
-
-{{-- profile.blade.phpの@yield('title')に'プロフィールの新規作成'を埋め込む --}}
+<!--{{-- profile.blade.phpの@yield('title')に'プロフィールの新規作成'を埋め込む --}}-->
 @section('title', 'プロフィールの新規作成')
-
-{{-- profile.blade.phpの@yield('content')に以下のタグを埋め込む --}}
+<!--{{-- profile.blade.phpの@yield('content')に以下のタグを埋め込む --}}-->
 @section('content')
     <div class="container">
         <div class="row">
             <div class="col-md-8 mx-auto">
                 <h2>My プロフィール</h2>
-    <!--4.応用】 resources/views/admin/profile/create.blade.php を編集して、-->
-    <!--氏名(name)、性別(gender)、趣味(hobby)、自己紹介欄(introduction)を入力する-->
-    <!--フォームを作成してください。また、formの送信先(<form action=”この部分”>)を、-->
-    <!--Admin\ProfileController の create Action に指定してください。-->
                     <form action="{{ action('Admin\ProfileController@create') }}" method="post" enctype="multipart/form-data">
 
                    @if (count($errors) > 0)

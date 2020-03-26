@@ -48,11 +48,7 @@
                         </ul>
 
                         <!-- Right Side Of Navbar -->
-                        <ul class="navbar-nav ml-auto">
-<!--1.【応用】 resources/views/layouts/profile.blade.php も編集して、-->
-<!--プロフィール編集画面にもログインリンクやログアウトリンクを表示するように-->
-<!--カスタマイズしましょう。            -->
-                         <!--{{-- 以下を追記 --}}-->
+                        <ul class="navbar-nav ml-auto"
                         <!-- Authentication Links -->
                         {{-- ログインしていなかったらログイン画面へのリンクを表示 --}}
                         @guest
