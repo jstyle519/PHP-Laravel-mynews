@@ -52,3 +52,11 @@ Route::group(['prefix' => 'admin'], function() {
 // ・TRACE=>対象リソースへのパスに沿ってメッセージのループバックテストを実行します。
 // ・CONNECT=>対象リソースで識別されるサーバーとの間にトンネルを確立します。
 // ・PATCH=>リソースを部分的に変更するために使用します。
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');
+
+Auth::routes();
+
+Route::get('/home', 'HomeController@index')->name('home');

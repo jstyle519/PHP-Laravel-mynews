@@ -6,6 +6,9 @@ use Illuminate\Http\Request;
 use App\Http\Controllers\Controller;
 
 use App\News;
+use App\History;
+
+use Carbon\Carbon;
 
 
 class NewsController extends Controller
@@ -82,6 +85,6 @@ class NewsController extends Controller
       $history->edited_at = Carbon::now();
       $history->save();
 
-      return redirect('admin/news');
+      return redirect('admin/news/');
   }
 }
