@@ -38,25 +38,7 @@ Route::group(['prefix' => 'admin'], function() {
  Route::get('profile', 'Admin\ProfileController@index')->middleware('auth');
  Route::get('profile/delete', 'Admin\ProfileController@delete')->middleware('auth');
 }); 
-// 1, GETメソッドとPOSTメソッドについて調べ、どのような違いがあるか説明してください。
-// ・GETメソッド=>WebブラウザからWebサーバに渡す値をURL（ホームページの住所）の後ろにくっつけて送ること　　
-// ・POSTメソッド=>WebブラウザからWebサーバに渡す値をURL（ホームページの住所）の見えない所にくっつけて送ること
 
 
-// 2.【応用】 GET/POSTメソッド以外にどのようなメソッドがあるか、
-// またどのように使われるかを説明してください
-// ・PUT=>新しいリソースを作成するか、指定したリソースの表現をリクエストしたペイロードに置き換える
-// ・DELETE=>指定したリソースを削除する
-// ・HEAD=>getメソッドと同じであるが、ページの中は取得しない。
-// ・OPTIONS=>対象リソースの通信オプションを示すために使用します。
-// ・TRACE=>対象リソースへのパスに沿ってメッセージのループバックテストを実行します。
-// ・CONNECT=>対象リソースで識別されるサーバーとの間にトンネルを確立します。
-// ・PATCH=>リソースを部分的に変更するために使用します。
-
-Auth::routes();
-
-Route::get('/home', 'HomeController@index')->name('home');
-
-Auth::routes();
-
-Route::get('/home', 'HomeController@index')->name('home');
+Route::get('/', 'NewsController@index');
+Route::get('/profile', 'ProfileController@index');
