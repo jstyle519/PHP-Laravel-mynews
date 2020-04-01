@@ -46,6 +46,7 @@
                                 </div>
                                 <div class="gender">
                                     <label class="col-md-2">Gender</label>
+                                    <br>
                                     {{ str_limit($post->gender, 20) }}
                                 </div>
                                 <div class="hobby">
@@ -54,6 +55,7 @@
                                 </div>
                                 <div class="introduction mt-3">
                                         <label class="col-md-2">Introduction</label>
+                                        <br>
                                     {{ str_limit($post->introduction, 1500) }}
                             </div>
                             <div class="image col-md-6 text-right mt-4">
